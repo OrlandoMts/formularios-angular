@@ -13,4 +13,12 @@ export class SwitchesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  persona = {
+    genero: 'M',
+    notificaciones: false
+  }
+
+  terminosYCondiciones = false;
+
 }
