@@ -1,1 +1,71 @@
-<p>basicos works!</p>
+<h2>Template: Básicos</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="guardar(miFormulario)" #miFormulario="ngForm" autocomplete="off">
+            <div class="mb-3 row">
+                <label for="producto" class="col-sm-3 col-form-label">Producto</label>
+                <div class="col-sm-9">
+                    <input id="producto"
+                           type="text" 
+                           value=""
+                           class="form-control"
+                           placeholder="Nombre del productor"
+                           ngModel
+                           name="producto"
+                           required>
+                    <span class="form-text text-danger"
+                          *ngIf="!miFormulario.valid">
+                          Debe escribir un producto</span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="precio" class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                    <input id="precio"
+                           type="number" 
+                           value=""
+                           class="form-control"
+                           placeholder="Precio del producto"
+                           ngModel
+                           name="precio" >
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="existencias" class="col-sm-3 col-form-label">Existencias</label>
+                <div class="col-sm-9">
+                    <input id="existencias"
+                           type="number" 
+                           value=""
+                           class="form-control"
+                           placeholder="Existencias del producto"
+                           ngModel
+                           name="existencias" >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-end">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <span>Valid</span>
+        <pre>{{miFormulario.valid}}</pre>
+    </div>
+
+    <div class="col-sm-9">
+        <span>Value</span>
+        <pre>{{miFormulario.value | json}}</pre>
+    </div>
+</div>
